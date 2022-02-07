@@ -76,10 +76,11 @@ const Board = (props) => {
     const [columns, setColumns] = useState(columnsFromBackend);
     
     useEffect(() => {
+        console.log(data);
         setColumns(prepareData(data));
-    }, []);
+    }, [data]);
 
-    console.log(data);
+//    console.log(data);
 
     return (
         <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>

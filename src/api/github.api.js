@@ -1,12 +1,11 @@
-
-const API_TOKEN = "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";
+const AuthSecret = "Qm9yc2NoZXo6Z2hwX2hmSHFhMVFudjVMWFVYYUtOR1JlTjdxR0xzOUlwMzJLYjNOWQ=="
 
 export const updateIssue = async (issue_number, state) =>
     fetch(`https://api.github.com/repos/Borschez/practice-9-1/issues/${issue_number}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Basic ${btoa(`Borschez: ${API_TOKEN}`)}`
+            "Authorization": `Basic ${AuthSecret}`
         },
         body: JSON.stringify({
             "owner": 'Borschez',

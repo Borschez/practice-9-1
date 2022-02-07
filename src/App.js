@@ -5,16 +5,16 @@ import './App.css'
 import { getIssues, updateIssue } from './api/github.api'
 
 export default function App() {
-  const [data, setData] = useState([]);
-  useEffect(()=> {
+  const [data, setData] = useState([]);  
+  useEffect(() => {
     getIssues("all").then(json => setData(json));
   }, []);
-  
+
   return (
     <div className="App">
-      <header className="App-header">Login Form Validation</header>
-      <div id="content">
-        <Board data={data} updateItem={updateIssue}/>
+      <header className="App-header">GitHub Issues</header>      
+      <div id="content">        
+        <Board data={data} updateItem={updateIssue} />
       </div>
     </div>
   );
